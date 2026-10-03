@@ -41,7 +41,9 @@ function exercise_01() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function calculateArea(radius) {
+    return Math.PI * radius * radius;
+  }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -60,8 +62,10 @@ function exercise_02() {
   
   */
   // CODE IN THE OPEN LINES BELOW
-
-  const placeholder = "Delete this line and code here";
+  function calculateArea(radius) {
+    return Math.PI * radius * radius;
+  }
+  console.log(calculateArea(5));
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -78,7 +82,7 @@ function exercise_03() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  const calculateArea = (radius) => Math.PI * radius * radius;
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -99,7 +103,12 @@ function exercise_04() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function isValidEmail(email) {
+    const atIndex = email.indexOf("@");
+    if (atIndex === -1) return false;
+    const dotIndex = email.indexOf(".", atIndex + 1);
+    return dotIndex !== -1;
+  }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -120,7 +129,11 @@ function exercise_05() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function greet(name, greeting = "Hello") {
+    return `${greeting}, ${name}!`;
+  }
+  console.log(greet("Alice"));
+  console.log(greet("Bob", "Hi"));
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -148,10 +161,10 @@ function exercise_06() {
   console.log(message);
 
   /*
-
-    Write what you think will happen IN THIS COMMENT BLOCK.
-    Then explain why the code behaved as it did.
-
+  It wil log:
+  Local
+  Global
+  The function uses the local message variable. Outside the function, it uses the global message variable.
   */
 }
 
@@ -174,7 +187,20 @@ function exercise_07() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function incrementCounter() {
+    let counter = 0;
+    counter++;
+    console.log(counter);
+  }
+  incrementCounter();
+  incrementCounter();
+  /*
+  It will log:
+  1
+  1
+  
+  counter cannot be accessed outside the function because it has local scope.
+  */
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -193,7 +219,11 @@ function exercise_08() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function makeMultiplier(multiplier) {
+    return function (number) {
+      return number * multiplier;
+    };
+  }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -220,7 +250,16 @@ function exercise_09() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function factorial(n) {
+    if (n < 0) {
+      console.log("Bad number input");
+      return;
+    }
+    if (n === 0 || n === 1) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -238,7 +277,7 @@ function exercise_10() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  fruits.forEach(fruit => console.log(fruit));
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -256,13 +295,8 @@ function exercise_11() {
   // REPLACE the code below
 
   const numbers = [1, 2, 3, 4, 5];
-  let sum = 0;
-
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-
-  console.log(sum); // Outputs: 15
+  const sum = numbers.reduce((total, number) => total + number, 0);
+  console.log(sum);
 
   // REPLACE the code above
 }
@@ -282,7 +316,8 @@ function exercise_12() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  const evenNumbers = numbers.filter(number => number % 2 === 0);
+  console.log(evenNumbers);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -304,7 +339,21 @@ function exercise_13() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  let number = 10;
+  function changeNumber(value) {
+    value = 20;
+  }
+
+  changeNumber(number);
+  console.log(number); // Outputs: 10 (primitive value remains unchanged)
+  
+  const person = { name: "Alice" };
+  function changePersonName(obj) {
+    obj.name = "Bob";
+  }
+
+  changePersonName(person);
+  console.log(person); // Outputs: { name: "Bob" } (object is modified)
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -322,7 +371,13 @@ function exercise_14() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  const person = { name: "Alice" };
+  function addAge(obj) {
+    obj.age = 30;
+  }
+
+  addAge(person);
+  console.log(person); // Outputs: { name: "Alice", age: 30 } (object is modified)  
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -348,7 +403,8 @@ function exercise_15() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  const bob = users.find(user => user.name === "Bob");
+  console.log(bob); // Outputs: { id: 2, name: "Bob" }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -371,7 +427,9 @@ function exercise_16() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  Object.entries(person).forEach(([key, value]) => {
+    console.log(`${key}: ${value}`);
+  });
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -390,7 +448,9 @@ function exercise_17() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function capitalizeStrings(strings) {
+    return strings.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+  }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -413,7 +473,9 @@ function exercise_18() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function power(base, exponent = 2) {
+    return Math.pow(base, exponent);
+  }
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -434,7 +496,9 @@ function exercise_19() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  (function() {
+    console.log("This is an IIFE");
+  })();
 
   // CODE IN THE OPEN LINES ABOVE
 }
